@@ -1,0 +1,16 @@
+dependencies:
+  post:
+    - npm install -g cordova ionic
+    - npm i
+    - ionic state restore
+
+test:
+  override:
+    - npm run test
+
+deployment:
+  development:
+    branch: development
+    commands:
+      - npm run serve
+      - npm run e2e
