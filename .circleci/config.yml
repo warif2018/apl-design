@@ -8,7 +8,6 @@ jobs:
       - checkout
       - run: sudo npm install -g cordova ionic
       - run: npm install
-      # - run: ionic state restore
       - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
-      - run: ionic serve -bd&
-      - run: npm run e2e -- --no-progress
+      # - run: ionic serve -bd&
+      # - run: npm run e2e -- --no-progress
