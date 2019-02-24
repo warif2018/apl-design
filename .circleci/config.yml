@@ -4,12 +4,12 @@ jobs:
     working_directory: ~/
     docker:
       - image: circleci/node:8-browsers
-  steps:
-    - checkout
-    - run: npm install -g cordova ionic
-    - run: npm install
-    - run: ionic state restore
-    - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
-    - run: ionic serve
-    - run: npm run e2e -- --no-progress
-    - run: ionic build
+    steps:
+      - checkout
+      - run: npm install -g cordova ionic
+      - run: npm install
+      - run: ionic state restore
+      - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
+      - run: ionic serve
+      - run: npm run e2e -- --no-progress
+      - run: ionic build
