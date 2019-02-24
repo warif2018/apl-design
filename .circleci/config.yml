@@ -1,16 +1,15 @@
-dependencies:
-  post:
-    - npm install -g cordova ionic
-    - npm i
-    - ionic state restore
-
-test:
-  override:
-    - npm run test
-
-deployment:
-  development:
-    branch: development
-    commands:
-      - npm run serve
-      - npm run e2e
+version: 2
+jobs:
+  build:
+    working_directory: ~/
+    docker:
+      - image: circleci/node:8-browsers
+  steps:
+    - checkout
+    - run: npm install -g cordova ionic
+    - run: npm install
+    - run: ionic state restore
+    - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
+    - run: ionic serve
+    - run: npm run e2e -- --no-progress
+    - run: ionic build

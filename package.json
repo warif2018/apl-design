@@ -1,8 +1,8 @@
 {
-  "name": "Warif",
+  "name": "warif",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "T.miya",
+  "homepage": "https://",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",
