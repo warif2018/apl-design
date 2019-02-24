@@ -1,11 +1,11 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/
+    # working_directory: ~/
     docker:
       - image: circleci/node:8-browsers
     steps:
-      - checkout
+      - run: echo `pwd`
       - run: npm install -g cordova ionic
       - run: npm install
       - run: ionic state restore
