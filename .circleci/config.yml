@@ -5,8 +5,7 @@ jobs:
     docker:
       - image: circleci/node:8-browsers
     steps:
-      - run: echo `pwd`
-      - run: npm install -g cordova ionic
+      - run: sudo npm install -g cordova ionic
       - run: npm install
       - run: ionic state restore
       - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
