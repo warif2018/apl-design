@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: circleci/node:8-browsers
     steps:
+      - checkout
       - run: sudo npm install -g cordova ionic
       - run: npm install
       # - run: ionic state restore
