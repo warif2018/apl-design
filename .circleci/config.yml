@@ -10,5 +10,5 @@ jobs:
       - run: npm install
       # - run: ionic state restore
       - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
-      # - run: ionic serve&
+      - run: ionic serve -bd&
       - run: npm run e2e -- --no-progress
