@@ -1,0 +1,33 @@
+# 推奨エディタ設定
+
+## Visual Studio Code
+https://code.visualstudio.com/
+- 以下の拡張を追加する
+  - ESLint
+  - Vetur
+  - EditorConfig for VS Code
+
+# Style
+
+
+
+## ルール
+
+styling に際して、以下を守るようにしてください。
+
+- vendor prefix はつけない（autoprefixer が自動的に付与してくれるため）
+- 全ての element に対してクラスを付与する（`all: initial`を自動的に付与させるため）
+- Component ファイルには必ず`/** @define Component名 */`と定義する（bem linter の lint 対象にするため。未対応箇所が減ってきたら、自動的に全ての vue ファイルを lint 対象にする予定）
+- 子孫 Selector はネストさせないでください。ネストさせると、`all: initial`が適用されなくなります。
+
+## ツール
+
+以下の postcss plugin を用いています。
+
+- [autoprefixer](https://github.com/postcss/autoprefixer): vendor prefix を自動的に付与してくれます。
+- [postcss-autoreset](https://github.com/maximkoretskiy/postcss-autoreset): css クラスに対して、自動的に`all: initial`を付与してくれます。これにより、外部からの style を無効化できます。
+- [postcss-initial](https://github.com/maximkoretskiy/postcss-initial): `all: initial`は IE では非対応のため使えませんが、擬似的に IE でも動作するように IE が解釈可能なプロパティに展開してくれます。
+- [postcss-bem-linter](https://github.com/postcss/postcss-bem-linter): SUIT で記述できているかどうかをチェックしてくれます。**production 以外では`warning`となりますが、production では`error`となりますので注意してください。**
+
+## FAQ
+
